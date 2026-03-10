@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo 'Unlocking and mounting Macintosh HD - Data'
+diskutil apfs unlockVolume $(diskutil info 'Macintosh HD - Data' | grep 'Identifier' | awk '{print $NF}')
+
 echo 'Removing profiles!'
 cd /Volumes/"Macintosh HD"/
 rm -rf ./var/db/ConfigurationProfiles/*
