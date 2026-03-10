@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo 'Unlocking and mounting Macintosh HD - Data'
 diskutil apfs unlockVolume $(diskutil info 'Macintosh HD - Data' | grep 'Identifier' | awk '{print $NF}')
@@ -21,3 +21,4 @@ mv ./Library/LaunchAgents/com.microsoft.update.agent.plist ./Users/Shared/mdm_ag
 mv ./Library/LaunchAgents/com.paloaltonetworks.gp.pangp ./Users/Shared/mdm_agents_backup/
 
 echo "Done! Please Reboot"
+
