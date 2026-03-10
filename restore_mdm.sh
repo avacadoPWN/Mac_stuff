@@ -10,4 +10,3 @@ echo 'Restoring mdm agents!'
 mv ./Users/Shared/mdm_agents_backup/* ./Library/LaunchAgents/
 
 echo "Done! Please Reboot"
-
