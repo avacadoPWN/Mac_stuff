@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo 'Unlocking and mounting Macintosh HD - Data'
 diskutil apfs unlockVolume $(diskutil info 'Macintosh HD - Data' | grep 'Identifier' | awk '{print $NF}')
@@ -10,3 +10,4 @@ echo 'Restoring mdm agents!'
 mv ./Users/Shared/mdm_agents_backup/* ./Library/LaunchAgents/
 
 echo "Done! Please Reboot"
+
