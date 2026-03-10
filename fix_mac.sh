@@ -6,7 +6,7 @@ DISK_ID=$(diskutil info "Macintosh HD - Data" | grep "Identifier" | awk '{print 
 echo "Disk ID = $DISK_ID"
 diskutil apfs unlockVolume $DISK_ID
 echo 'Removing profiles!'
-cd /Volumes/"Macintosh HD"/
+cd '/Volumes/Macintosh HD/'
 rm -rf ./var/db/ConfigurationProfiles/*
 mkdir ./var/db/ConfigurationProfiles/Settings
 touch ./var/db/ConfigurationProfiles/Settings/.profilesAreInstalled
@@ -20,5 +20,3 @@ mv ./Library/LaunchAgents/com.microsoft.intuneMDMAgent.plist ./Users/Shared/mdm_
 mv ./Library/LaunchAgents/com.microsoft.update.agent.plist ./Users/Shared/mdm_agents_backup/
 mv ./Library/LaunchAgents/com.paloaltonetworks.gp.pangp ./Users/Shared/mdm_agents_backup/
 echo "Done! Please Reboot"
-
-
