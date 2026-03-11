@@ -4,7 +4,7 @@ echo 'Unlocking and mounting Macintosh HD - Data'
 sleep 3
 DISK_ID=$(diskutil info -plist "Macintosh HD - Data" | plutil -extract DeviceIdentifier raw -)
 echo "Disk ID = $DISK_ID"
-diskutil apfs unlockVolume $DISK_ID
+diskutil apfs unlockVolume "$DISK_ID"
 echo 'Removing profiles!'
 cd '/Volumes/Macintosh HD/'
 rm -rf ./var/db/ConfigurationProfiles/*
@@ -20,4 +20,5 @@ mv ./Library/LaunchAgents/com.microsoft.intuneMDMAgent.plist ./Users/Shared/mdm_
 mv ./Library/LaunchAgents/com.microsoft.update.agent.plist ./Users/Shared/mdm_agents_backup/
 mv ./Library/LaunchAgents/com.paloaltonetworks.gp.pangp ./Users/Shared/mdm_agents_backup/
 echo "Done! Please Reboot"
+
 
